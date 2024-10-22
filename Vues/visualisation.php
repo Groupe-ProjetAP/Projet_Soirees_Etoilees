@@ -30,7 +30,7 @@
                 include '../db.php'; // Chemin vers le fichier de connexion
 
                 // Récupération des soirées depuis la base de données
-                $sql = "SELECT * FROM soirees";
+                $sql = "SELECT * FROM soiree";
                 $stmt = $pdo->query($sql);
                 $soirees = $stmt->fetchAll();
 
@@ -38,8 +38,8 @@
                     foreach ($soirees as $soiree) {
                         echo '<tr>';
                         echo '<td>' . htmlspecialchars($soiree['nom']) . '</td>';
-                        echo '<td>' . intval($soiree['places_disponibles']) . '</td>';
-                        echo '<td>' . htmlspecialchars($soiree['date_creation']) . '</td>'; // Assurez-vous que ce champ existe dans votre DB
+                        echo '<td>' . intval($soiree['nbPlaces']) . '</td>';
+                        echo '<td>' . htmlspecialchars($soiree['dateSoiree']) . '</td>'; // Assurez-vous que ce champ existe dans votre DB
                         echo '</tr>';
                     }
                 } else {
