@@ -1,6 +1,6 @@
 <?php
 include 'modeles/Base.php';
-include 'C:\wamp64\www\bundledelamort\Projet_Soirees_Etoilees\modeles\SoireeDAO.php';
+include 'C:\wamp64\www\bundledelamort\Projet_Soirees_Etoilees\modeles\Soiree.php';
 
 class SoireeDAO extends Base{
     
@@ -11,11 +11,11 @@ class SoireeDAO extends Base{
     public function getLesSoirees() {
         $resultatRequete= $this ->query("SELECT idSoiree, nom FROM soiree");
         $tableauSoirée=$resultatRequete->fetchAll();
-        $listeSoirée=array();
+        $listeSoirées=array();
         foreach ($tableauSoirée as $uneLigneUneSoirée) {
             $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"]);
-            $listeSoirée[]=$unObjetCompetence;
+            $listeSoirées[]=$unObjetCompetence;
         }
-        return $listeSoirée;
+        return $listeSoirées;
     }
 }

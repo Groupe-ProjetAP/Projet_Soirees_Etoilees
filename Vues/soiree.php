@@ -1,4 +1,5 @@
 <?php
-foreach($listeSoirée as $uneSoirée){
-    echo $uneSoirée->getNom();
+foreach($listeSoirées as $uneSoirée){
+    
+    echo $uneSoirée->getNom()."<br>";
 }

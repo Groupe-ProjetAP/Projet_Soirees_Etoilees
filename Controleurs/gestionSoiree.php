@@ -10,7 +10,7 @@ switch ($action){
 
 
     case 'consultation'  :  $sourceDeDonnees = new SoireeDAO();
-                            $listeObjAteliers = $sourceDeDonnees->getLesSoirees();
+                            $listeSoirées = $sourceDeDonnees->getLesSoirees();
                             echo('test');
                             include("./vues/soiree.php");
                             break;
