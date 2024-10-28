@@ -1,25 +1,32 @@
-<h2> Les soirée sont : </h2>
+<h2> Gestion des soirées : </h2>
 
-<a href="index.php?controleur=Soiree&action=AjouterSoiree">ajouter une soirée</a>
+<a class='btn' href="index.php?controleur=Soiree&action=AjouterSoiree">ajouter une soirée</a>
+</br>
+</br>
+
 <table>
-    <tr>
-        <th>Nom de la soirée</th>
-        <th>Nombre de places disponible</th>
-        <th>date de création de la soirée</th>
-        <th>Action</th>
-    </tr>
-
-    <?php
-        foreach($listeSoirées as $uneSoirée){
+    <thead>
+        <tr>
+            <th>Nom de la soirée</th>
+            <th>Nombre de places disponible</th>
+            <th>date de création de la soirée</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach ($listeSoirées as $uneSoirée) {
             echo "<tr>";
-            echo "<td>".$uneSoirée->getNom()."</td>";
-            echo "<td>".$uneSoirée->getNbPlace()."</td>";
-            echo "<td>".$uneSoirée->getDateSoirée()."</td>";
-            echo "<td>"."<a href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=".$uneSoirée->getId()."'>supprimer</a>"."<br>"."<a href='index.php?controleur=Soiree&action=modifierSoiree&nom=".$uneSoirée->getNom()."&nbPlace=".$uneSoirée->getNbPlace()."&date=".$uneSoirée->getDateSoirée()."'>modifier</a>"."</td>"; // je vais appliquer du css pour que ça resemble a des boutons
+                echo "<td>" . htmlspecialchars($uneSoirée->getNom()) . "</td>";
+                echo "<td>" . htmlspecialchars($uneSoirée->getNbPlace()) . "</td>";
+                echo "<td>" . htmlspecialchars($uneSoirée->getDateSoirée()) . "</td>";
+                echo "<td>";
+                    echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>Supprimer</a>";
+                    echo " ";
+                    echo "<a class='btn' href='index.php?controleur=Soiree&action=modifierSoiree&nom=" . $uneSoirée->getNom() . "&nbPlace=" . $uneSoirée->getNbPlace() . "&date=" . $uneSoirée->getDateSoirée() . "'>Modifier</a>";
+                echo "</td>";
             echo "</tr>";
         }
-    ?>
-
-    </tr>
+        ?>
+    </tbody>
 </table>
-

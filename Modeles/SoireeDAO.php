@@ -1,6 +1,6 @@
 <?php
 include 'modeles/Base.php';
-include 'C:\wamp64\www\bundledelamort\Projet_Soirees_Etoilees\modeles\Soiree.php';
+include 'C:\wamp64\www\Projet_Soirees_Etoilees\modeles\Soiree.php';
 
 class SoireeDAO extends Base{
     
