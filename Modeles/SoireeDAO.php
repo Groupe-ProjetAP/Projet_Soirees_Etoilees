@@ -20,14 +20,15 @@ class SoireeDAO extends Base{
     }
     public function SupprimerSoiree($idSoiree) {
         $resultatRequete= $this ->exec("DELETE FROM `soiree` WHERE idSoiree =$idSoiree");
-        //return $resultatRequete;
+        return $resultatRequete;
     }
-    public function AjouerUneSoirees($nom,$nbPlace,$date) {
+    public function AjouterUneSoiree($nom,$nbPlace,$date) {
         $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `nbPlaces`, `dateSoiree`) VALUES ('$nom','$nbPlace','$date')");
-        //return $resultatRequete;
+        return $resultatRequete;
     }
-    public function ModifierUneSoirees($nom,$nbPlace,$date) {
-        $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `nbPlaces`, `dateSoiree`) VALUES ('$nom','$nbPlace','$date')");
-        //return $resultatRequete;
+    public function ModifierUneSoiree($idSoiree,$nom,$nbPlace,$date) {
+        echo("UPDATE `soiree` SET `nom` = '$nom', `nbPlaces` = '$nbPlace', `dateSoiree` = '$date' WHERE `idSoiree` = $idSoiree");
+        $resultatRequete = $this->exec("UPDATE `soiree` SET `nom` = '$nom', `nbPlaces` = '$nbPlace', `dateSoiree` = '$date' WHERE `idSoiree` = $idSoiree");
+        return $resultatRequete;
     }
 }

@@ -8,32 +8,42 @@ else
 
 switch ($action) {
 
-
     case 'consultation':
         $sourceDeDonnees = new SoireeDAO();
         $listeSoirées = $sourceDeDonnees->getLesSoirees();
 
         include("./vues/soiree.php");
         break;
+
     case 'AjouterSoiree':
         $sourceDeDonnees = new SoireeDAO();
         include("./vues/formulaireAjoutSoiree.php");
         break;
-    case 'enregSoiree':
+
+    case 'enregSoireeAjoutee':
         $sourceDeDonnees = new SoireeDAO();
-        $listeSoirées = $sourceDeDonnees->AjouerUneSoirees($_POST['nom'], $_POST['nbPlace'], $_POST['date']);
+        $resultatRequete = $sourceDeDonnees->AjouterUneSoiree($_POST['nom'], $_POST['nbPlace'], $_POST['date']);
 
         include("./vues/ConfirmationAjout.php");
         break;
+
     case 'modifierSoiree':
         $sourceDeDonnees = new SoireeDAO();
         include("./vues/formulaireModifSoiree.php");
         break;
+
+    case 'enregSoireeModif':
+        $sourceDeDonnees = new SoireeDAO();
+        $resultatRequete = $sourceDeDonnees->ModifierUneSoiree($_GET['idSoiree'], $_POST['nom'], $_POST['nbPlace'], $_POST['date']);
+
+        include("./vues/ConfirmationModif.php");
+        break;
+
     case 'supprimerSoiree':
         $sourceDeDonnees = new SoireeDAO();
-        $listeSoirées = $sourceDeDonnees->SupprimerSoiree($_GET['idSoiree']);
+        $resultatRequete = $sourceDeDonnees->SupprimerSoiree($_GET['idSoiree']);
 
-        include("./vues/ConfirmationSuprression.php");
+        include("./vues/ConfirmationSupression.php");
         break;
 
 }
