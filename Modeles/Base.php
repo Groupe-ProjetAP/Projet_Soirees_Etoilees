@@ -40,7 +40,7 @@ class Base {
     }
 	
     public function exec($sql) {
-		echo$sql;
+		echo $sql;
         return $this->db->exec($sql);
     }
 	
