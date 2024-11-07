@@ -14,7 +14,12 @@ switch ($action) {
 
         include("./vues/soiree.php");
         break;
-
+        case 'consultationClient':
+            $sourceDeDonnees = new SoireeDAO();
+            $listeSoirées = $sourceDeDonnees->getLesSoirees();
+    
+            include("./vues/soireeClient.php");
+            break;
     case 'AjouterSoiree':
         $sourceDeDonnees = new SoireeDAO();
         include("./vues/formulaireAjoutSoiree.php");
