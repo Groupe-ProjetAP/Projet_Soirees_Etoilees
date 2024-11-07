@@ -33,11 +33,12 @@ switch ($action) {
         break;
 
     case 'enregSoireeModif':
+        var_dump($_POST['idSoiree'],$_POST['nom'],$_POST['nbPlace'],$_POST['date']);
         $sourceDeDonnees = new SoireeDAO();
-        $resultatRequete = $sourceDeDonnees->ModifierUneSoiree($_GET['idSoiree'], $_POST['nom'], $_POST['nbPlace'], $_POST['date']);
-
-        include("./vues/ConfirmationModif.php");
-        break;
+        $resultatRequete = $sourceDeDonnees->ModifierUneSoiree($_POST['idSoiree'], $_POST['nom'], $_POST['nbPlace'], $_POST['date']);
+        
+       include("./vues/ConfirmationModif.php");
+       break;
 
     case 'supprimerSoiree':
         $sourceDeDonnees = new SoireeDAO();
