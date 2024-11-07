@@ -22,7 +22,7 @@ switch ($action) {
 
     case 'enregSoireeAjoutee':
         $sourceDeDonnees = new SoireeDAO();
-        $resultatRequete = $sourceDeDonnees->AjouterUneSoiree($_POST['nom'], $_POST['nbPlace'], $_POST['date']);
+        $resultatRequete = $sourceDeDonnees->AjouterUneSoiree($_POST['nom'], $_POST['nbPlace'], $_POST['lieu'], $_POST['dateSoiree'],$_POST['heureSoiree'], $_POST['placeAssise'],$_POST['infoComp'], $_POST['dateCreation'] );
 
         include("./vues/ConfirmationAjout.php");
         break;

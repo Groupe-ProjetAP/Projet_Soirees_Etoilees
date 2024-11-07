@@ -12,6 +12,7 @@
             <th>Lieu</th>
             <th>Date soirée</th>
             <th>Heure Soirée</th>
+            <th>Emplacement</th>
             <th>Info Complémentaire</th>
             <th>date de création de la soirée</th>
             <th>Action</th>
@@ -26,6 +27,11 @@
                 echo "<td>" . $uneSoirée->getLieu() . "</td>";
                 echo "<td>" . $uneSoirée->getDateSoiree() . "</td>";
                 echo "<td>" . $uneSoirée->getHeureSoiree() . "</td>";
+                    if($uneSoirée->getPlaceAssise()){
+                        echo "<td>Assis</td>";
+                    }else{
+                        echo "<td>Debout</td>";
+                    }
                 echo "<td>" . $uneSoirée->getInfoComp() . "</td>";
                 echo "<td>" . $uneSoirée->getDateCreation() . "</td>";
                 echo "<td>";
