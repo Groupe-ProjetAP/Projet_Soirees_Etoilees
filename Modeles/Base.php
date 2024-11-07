@@ -16,9 +16,9 @@ class Base {
 			
 			/* =============================BD DISTANTE =============================================== */
 			
-			$serveurBdDistant = 'mysql-projetsjp.alwaysdata.net'; // base distante - serveur SGBD domaine SIO // addresse de la base incorrect
+			$serveurBdDistant = 'mysql-projetsjp.alwaysdata.net';
 			
-			$nomBdDistante = "projetsjp_soireeetoilees"; // nom de la base incorrect 
+			$nomBdDistante = "projetsjp_soireeetoilees";
 			$this->db = new PDO("mysql:host=".$serveurBdDistant.";dbname=".$nomBdDistante,$user,$mdp);
 			
            		
