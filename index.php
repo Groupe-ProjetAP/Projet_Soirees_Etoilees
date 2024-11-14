@@ -18,8 +18,9 @@
             <nav>
                 <ul>
                     <li><a href="index.php?page=home">Accueil</a></li>
-                    <li><a href="index.php?controleur=Soiree&action=consultation">Gérer vos soirées</a></li> <!-- on avait inscrit gestionSoirée -->
-                    <!-- <li><a href="index.php?page=reservations">Vos réservations</a></li> -->
+                    <li><a href="index.php?controleur=Soiree&action=consultation">Gérer vos soirées</a></li> 
+                    <!-- <li><a href="index.php?controleur=Soiree&action=consultation">vos soirées</a></li>  -->
+                    <a href="index.php?controleur=Soiree&action=consultationClient">soirées</a></li>
                 </ul>
             </nav>
             <div id="contenu">
@@ -34,7 +35,9 @@
                     case 'Soiree': // si ici c'est Soiree on met dans l'url à la partie controleur Soiree aussi et non gestionSoirée 
                         include("controleurs/gestionSoiree.php");
                         break;
-
+                    case 'Reservation': // si ici c'est Soiree on met dans l'url à la partie controleur Soiree aussi et non gestionSoirée 
+                        include("Controleurs\gestionReservation.php");
+                        break;
                 }
                 ?>
 

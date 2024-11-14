@@ -1,6 +1,7 @@
 <?php
 class Soiree {
     private $id;
+    private $nbplacedispo;
     private $nom;
     private $lieu;
     private $nbplace;
@@ -19,6 +20,7 @@ class Soiree {
         $this->placeAssise = $placeAssise;
         $this->infoComp = $infoComp;
         $this->dateCreation = $dateCreation;
+
     }
     public function getId() {
         return $this->id;
@@ -36,6 +38,7 @@ class Soiree {
     public function getDateSoiree(){
         return $this->dateSoiree;
     }
+
     public function getHeureSoiree(){
         return $this->heureSoiree;
     }
@@ -47,6 +50,7 @@ class Soiree {
     }
     public function getDateCreation(){
         return $this->dateCreation;
+
     }
 
 }

@@ -14,7 +14,12 @@ switch ($action) {
 
         include("./vues/soiree.php");
         break;
-
+        case 'consultationClient':
+            $sourceDeDonnees = new SoireeDAO();
+            $listeSoirées = $sourceDeDonnees->getLesSoirees();
+    
+            include("./vues/soireeClient.php");
+            break;
     case 'AjouterSoiree':
         $sourceDeDonnees = new SoireeDAO();
         include("./vues/formulaireAjoutSoiree.php");
@@ -33,11 +38,13 @@ switch ($action) {
         break;
 
     case 'enregSoireeModif':
+        var_dump($_POST['idSoiree'],$_POST['nom'],$_POST['nbPlace'],$_POST['date']);
         $sourceDeDonnees = new SoireeDAO();
         $resultatRequete = $sourceDeDonnees->ModifierUneSoiree($_GET['idSoiree'],$_POST['nom'], $_POST['nbPlace'], $_POST['lieu'], $_POST['dateSoiree'],$_POST['heureSoiree'], $_POST['placeAssise'],$_POST['infoComp'], $_POST['dateCreation']);
 
         include("./vues/ConfirmationModif.php");
         break;
+
 
     case 'supprimerSoiree':
         $sourceDeDonnees = new SoireeDAO();

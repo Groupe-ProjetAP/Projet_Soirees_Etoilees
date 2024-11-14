@@ -33,7 +33,6 @@
 
         <label for="dateCreation">Date de création de la soirée :</label>
         <input type="date" id="dateCreation" name="dateCreation" placeholder="Date de création de la soirée"><br><br>
-
         <input type="submit" value="Envoyer">
     </form>
 </body>

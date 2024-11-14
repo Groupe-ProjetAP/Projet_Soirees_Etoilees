@@ -36,7 +36,11 @@
         <label for="dateCreation">Date de création de la soirée :</label>
         <input type="date" id="dateCreation" name="dateCreation" placeholder="Date de création de la soirée" value="<?php echo $_GET['dateCreation']; ?>"><br><br>
 
+        <input type="hidden" id="idSoiree" name="idSoiree" value="<?php echo $_GET['idSoiré']; ?>">
+      
         <input type="submit" value="Modifier">
     </form>
 </body>
 </html>
+<?php
+var_dump( $_GET['idSoiré']);
