@@ -1,16 +1,14 @@
 <?php
-class Soiree {
+class reservations {
     private $id;
-    private $nbplacedispo;
     private $nom;
-    private $nbplace;
+    private $numReservation;
     private $dateSoiree;
-    public function __construct($id, $nom,$nbplace,$dateSoiree,$nbplacedispo) {
+    public function __construct($id, $nom,$numReservation,$dateSoiree) {
         $this->id = $id;
         $this->nom = $nom;
-        $this->nbplace = $nbplace;
+        $this->numReservation = $numReservation;
         $this->dateSoiree = $dateSoiree;
-        $this->nbplacedispo= $nbplacedispo;
     }
     public function getId() {
         return $this->id;
@@ -19,14 +17,11 @@ class Soiree {
     public function getNom() {
         return $this->nom;
     }
-    public function getNbPlace(){
-        return $this->nbplace;
+    public function getnumReservation(){
+        return $this->numReservation;
     }
     public function getDateSoirée(){
         return $this->dateSoiree;
-    }
-    public function getNbPlaceDispo(){
-        return $this->nbplacedispo;
     }
 
 }

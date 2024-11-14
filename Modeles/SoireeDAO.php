@@ -9,11 +9,11 @@ class SoireeDAO extends Base{
     }
     
     public function getLesSoirees() {
-        $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,dateSoiree FROM soiree");
-        $tableauSoirée=$resultatRequete->fetchAll();
-        $listeSoirées=array();
-        foreach ($tableauSoirée as $uneLigneUneSoirée) {
-            $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"],$uneLigneUneSoirée['nbPlaces'],$uneLigneUneSoirée['dateSoiree']);
+        $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,dateSoiree,nbPlacesDispo FROM soiree");
+        $tableauReservation=$resultatRequete->fetchAll();
+        $listeReservation=array();
+        foreach ($tableauReservation as $uneLigneUneReservation) {
+            $unObjetCompetence = new Soiree($uneLigneUneReservation["idSoiree"], $uneLigneUneReservation["nom"],$uneLigneUneReservation['nbPlaces'],$uneLigneUneReservation['dateSoiree'],$uneLigneUneReservation["nbPlacesDispo"]);
             $listeSoirées[]=$unObjetCompetence;
         }
         return $listeSoirées;
@@ -27,7 +27,7 @@ class SoireeDAO extends Base{
         return $resultatRequete;
     }
     public function ModifierUneSoiree($idSoiree,$nom,$nbPlace,$date) {
-        echo("UPDATE `soiree` SET `nom` = '$nom', `nbPlaces` = '$nbPlace', `dateSoiree` = '$date' WHERE `idSoiree` = $idSoiree");
+        //echo("UPDATE `soiree` SET `nom` = '$nom', `nbPlaces` = '$nbPlace', `dateSoiree` = '$date' WHERE `idSoiree` = $idSoiree");
         $resultatRequete = $this->exec("UPDATE `soiree` SET `nom` = '$nom', `nbPlaces` = '$nbPlace', `dateSoiree` = '$date' WHERE `idSoiree` = $idSoiree");
         return $resultatRequete;
     }
