@@ -9,6 +9,11 @@
         <tr>
             <th>Nom de la soirée</th>
             <th>Nombre de places disponible</th>
+            <th>Lieu</th>
+            <th>Date soirée</th>
+            <th>Heure Soirée</th>
+            <th>Emplacement</th>
+            <th>Info Complémentaire</th>
             <th>date de création de la soirée</th>
             <th>Action</th>
         </tr>
@@ -17,9 +22,18 @@
         <?php
         foreach ($listeSoirées as $uneSoirée) {
             echo "<tr>";
-                echo "<td>" . htmlspecialchars($uneSoirée->getNom()) . "</td>";
-                echo "<td>" . htmlspecialchars($uneSoirée->getNbPlace()) . "</td>";
-                echo "<td>" . htmlspecialchars($uneSoirée->getDateSoirée()) . "</td>";
+                echo "<td>" . $uneSoirée->getNom() . "</td>";
+                echo "<td>" . $uneSoirée->getNbPlace() . "</td>";
+                echo "<td>" . $uneSoirée->getLieu() . "</td>";
+                echo "<td>" . $uneSoirée->getDateSoiree() . "</td>";
+                echo "<td>" . $uneSoirée->getHeureSoiree() . "</td>";
+                    if($uneSoirée->getPlaceAssise()){
+                        echo "<td>Assis</td>";
+                    }else{
+                        echo "<td>Debout</td>";
+                    }
+                echo "<td>" . $uneSoirée->getInfoComp() . "</td>";
+                echo "<td>" . $uneSoirée->getDateCreation() . "</td>";
                 echo "<td>";
                     echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>Supprimer</a>";
                     echo " ";

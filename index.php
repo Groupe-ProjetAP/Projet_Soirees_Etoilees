@@ -46,7 +46,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Votre Site - Tous droits réservés.</p>
+        <p>&copy; 2024  - Tous droits réservés.</p>
     </footer>
 </body>
 
