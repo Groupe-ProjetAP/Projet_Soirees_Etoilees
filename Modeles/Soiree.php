@@ -9,8 +9,7 @@ class Soiree {
     private $heureSoiree;
     private $placeAssise;
     private $infoComp;
-    private $dateCreation;
-    public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp,$dateCreation,$nbplacedispo) {
+    public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp,$nbplacedispo) {
         $this->id = $id;
         $this->nom = $nom;
         $this->nbplace = $nbplace;
@@ -19,7 +18,6 @@ class Soiree {
         $this->heureSoiree = $heureSoiree;
         $this->placeAssise = $placeAssise;
         $this->infoComp = $infoComp;
-        $this->dateCreation = $dateCreation;
         $this->nbplacedispo = $nbplacedispo;
 
     }
@@ -48,10 +46,6 @@ class Soiree {
     }
     public function getInfoComp(){
         return $this->infoComp;
-    }
-    public function getDateCreation(){
-        return $this->dateCreation;
-
     }
 
     public function getNbPlaceDispo(){

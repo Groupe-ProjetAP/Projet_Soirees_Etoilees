@@ -1,6 +1,6 @@
 <?php
 include 'modeles/Base.php';
-include 'C:\wamp64\www\Projet_Soirees_Etoilees\modeles\Soiree.php';
+include './Modeles/Soiree.php';
 
 class SoireeDAO extends Base{
     
@@ -9,11 +9,11 @@ class SoireeDAO extends Base{
     }
     
     public function getLesSoirees() {
-        $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,lieu,dateSoiree,heureSoiree,placeAssise,infoComp,dateCreation,nbPlacesDispo FROM soiree");
+        $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,lieu,dateSoiree,heureSoiree,placeAssise,infoComp,nbPlacesDispo FROM soiree");
         $tableauSoirée=$resultatRequete->fetchAll();
         $listeSoirées=array();
         foreach ($tableauSoirée as $uneLigneUneSoirée) {
-            $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"],$uneLigneUneSoirée['nbPlaces'],$uneLigneUneSoirée['lieu'],$uneLigneUneSoirée['dateSoiree'],$uneLigneUneSoirée['heureSoiree'],$uneLigneUneSoirée['placeAssise'],$uneLigneUneSoirée['infoComp'],$uneLigneUneSoirée['dateCreation'],$uneLigneUneSoirée['nbPlacesDispo']);
+            $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"],$uneLigneUneSoirée['nbPlaces'],$uneLigneUneSoirée['lieu'],$uneLigneUneSoirée['dateSoiree'],$uneLigneUneSoirée['heureSoiree'],$uneLigneUneSoirée['placeAssise'],$uneLigneUneSoirée['infoComp'],$uneLigneUneSoirée['nbPlacesDispo']);
             $listeSoirées[]=$unObjetCompetence;
         }
         return $listeSoirées;
