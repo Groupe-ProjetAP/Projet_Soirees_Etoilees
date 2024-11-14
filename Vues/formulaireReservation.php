@@ -7,11 +7,12 @@
 </head>
 <body>
     <form action="index.php?controleur=Soiree&action='enregSoireeModif" method="POST">
-        <input type="text" id='nom' name='nom' placeholder='nom de la soirée'>
-        <input type="number" id='nbPlace' name='nbPlace' placeholder='nombre de place à la soirée'>
-        <input type="date" id='date' name='date' placeholder='date de la soirée'>
-        <input type="text" id='participant' name='participant' placeholder='nom du participant'>
-        <input type="text" id='reserviste' name='reserviste' placeholder='nom du reserviste'>
+        <input type="text" id='nom' name='nom' placeholder='nom du participant' >
+        <input type="text" id='prenomParticipant' name='prenomParticipant' placeholder='prenom du participant'>
+        <input type="number" id='nbPlace' name='nbPlace' placeholder='nombre de place' >
+
+        <input type="hidden" id="Id" name="Id" value="<?php echo $_GET['Id']; ?>">
+        <input type="hidden" value="<?php echo $_GET['Id']; ?>">
         <input type="submit" value="Envoyer">
     </form>
 </body>

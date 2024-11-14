@@ -14,6 +14,14 @@ switch ($action) {
 
         include("./vues/reservation.php");
         break;
-
+    case 'AjouterReservation':
+            $sourceDeDonnees = new reservationDAO();
+            include("./vues/formulaireReservation.php");
+            break;
+    case 'EnregistrerReservation':
+                $sourceDeDonnees = new reservationDAO();
+                $resultatRequete = $sourceDeDonnees->AjoutLesReservation($_POST['participant'], $_POST['nbPlace'], $_POST['date']);
+                include("./vues/formulaireReservation.php");
+                break;
 
 }

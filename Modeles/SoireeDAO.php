@@ -9,11 +9,11 @@ class SoireeDAO extends Base{
     }
     
     public function getLesSoirees() {
-        $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,lieu,dateSoiree,heureSoiree,placeAssise,infoComp,dateCreation,nbPlacesDispo FROM soiree");
+        $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,lieu,dateSoiree,heureSoiree,placeAssise,infoComp,nbPlacesDispo FROM soiree");
         $tableauSoirée=$resultatRequete->fetchAll();
         $listeSoirées=array();
         foreach ($tableauSoirée as $uneLigneUneSoirée) {
-            $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"],$uneLigneUneSoirée['nbPlaces'],$uneLigneUneSoirée['lieu'],$uneLigneUneSoirée['dateSoiree'],$uneLigneUneSoirée['heureSoiree'],$uneLigneUneSoirée['placeAssise'],$uneLigneUneSoirée['infoComp'],$uneLigneUneSoirée['dateCreation'],$uneLigneUneSoirée['nbPlacesDispo']);
+            $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"],$uneLigneUneSoirée['nbPlaces'],$uneLigneUneSoirée['lieu'],$uneLigneUneSoirée['dateSoiree'],$uneLigneUneSoirée['heureSoiree'],$uneLigneUneSoirée['placeAssise'],$uneLigneUneSoirée['infoComp'],$uneLigneUneSoirée['nbPlacesDispo']);
             $listeSoirées[]=$unObjetCompetence;
         }
         return $listeSoirées;
@@ -22,11 +22,11 @@ class SoireeDAO extends Base{
         $resultatRequete= $this ->exec("DELETE FROM `soiree` WHERE idSoiree =$idSoiree");
         return $resultatRequete;
     }
-    public function AjouterUneSoiree($nom,$nbPlace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp,$dateCreation) {
-        $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `nbPlaces`, `lieu` , `dateSoiree`, `heureSoiree`, `placeAssise`, `infoComp`, `dateCreation` ) VALUES ('$nom','$nbPlace','$lieu','$dateSoiree','$heureSoiree','$placeAssise','$infoComp','$dateCreation')");
+    public function AjouterUneSoiree($nom,$nbPlace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp) {
+        $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `nbPlaces`, `lieu` , `dateSoiree`, `heureSoiree`, `placeAssise`, `infoComp` ) VALUES ('$nom','$nbPlace','$lieu','$dateSoiree','$heureSoiree','$placeAssise','$infoComp')");
         return $resultatRequete;
     }
-    public function ModifierUneSoiree($idSoiree, $nom, $nbPlace, $lieu, $dateSoiree, $heureSoiree, $placeAssise, $infoComp, $dateCreation) {
+    public function ModifierUneSoiree($idSoiree, $nom, $nbPlace, $lieu, $dateSoiree, $heureSoiree, $placeAssise, $infoComp) {
         $resultatRequete = $this->exec("UPDATE `soiree` 
                                         SET `nom` = '$nom', 
                                             `nbPlaces` = '$nbPlace', 
@@ -35,7 +35,7 @@ class SoireeDAO extends Base{
                                             `heureSoiree` = '$heureSoiree', 
                                             `placeAssise` = '$placeAssise', 
                                             `infoComp` = '$infoComp', 
-                                            `dateCreation` = '$dateCreation' 
+                                        
                                         WHERE `idSoiree` = $idSoiree");
         return $resultatRequete;
     }

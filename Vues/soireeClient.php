@@ -21,7 +21,7 @@
                 echo "<td>" . htmlspecialchars($uneSoirée->getNbPlaceDispo()) . "</td>";
                 echo "<td>" . htmlspecialchars($uneSoirée->getDateSoiree()) . "</td>";
                 echo "<td>";
-                    echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>reserver</a>";
+                    echo "<a class='btn' href='index.php?controleur=Reservation&action=AjouterReservation&Id=" .$uneSoirée->getId(). "&nbplacedispo=". $uneSoirée->getNbPlaceDispo() . "&datesoiree=". $uneSoirée->getDateSoiree(). "'>reserver</a>";
 
                 echo "</td>";
                 

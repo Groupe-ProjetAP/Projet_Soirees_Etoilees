@@ -31,8 +31,8 @@
         <label for="infoComp">Informations complémentaires :</label>
         <input type="text" id="infoComp" name="infoComp" placeholder="Informations complémentaires"><br><br>
 
-        <label for="dateCreation">Date de création de la soirée :</label>
-        <input type="date" id="dateCreation" name="dateCreation" placeholder="Date de création de la soirée"><br><br>
+        
+        
         <input type="submit" value="Envoyer">
     </form>
 </body>
