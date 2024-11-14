@@ -26,9 +26,17 @@ class SoireeDAO extends Base{
         $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `nbPlaces`, `lieu` , `dateSoiree`, `heureSoiree`, `placeAssise`, `infoComp`, `dateCreation` ) VALUES ('$nom','$nbPlace','$lieu','$dateSoiree','$heureSoiree','$placeAssise','$infoComp','$dateCreation')");
         return $resultatRequete;
     }
-    public function ModifierUneSoiree($idSoiree,$nom,$nbPlace,$date) {
-        echo("UPDATE `soiree` SET `nom` = '$nom', `nbPlaces` = '$nbPlace', `dateSoiree` = '$date' WHERE `idSoiree` = $idSoiree");
-        $resultatRequete = $this->exec("UPDATE `soiree` SET `nom` = '$nom', `nbPlaces` = '$nbPlace', `dateSoiree` = '$date' WHERE `idSoiree` = $idSoiree");
+    public function ModifierUneSoiree($idSoiree, $nom, $nbPlace, $lieu, $dateSoiree, $heureSoiree, $placeAssise, $infoComp, $dateCreation) {
+        $resultatRequete = $this->exec("UPDATE `soiree` 
+                                        SET `nom` = '$nom', 
+                                            `nbPlaces` = '$nbPlace', 
+                                            `lieu` = '$lieu', 
+                                            `dateSoiree` = '$dateSoiree', 
+                                            `heureSoiree` = '$heureSoiree', 
+                                            `placeAssise` = '$placeAssise', 
+                                            `infoComp` = '$infoComp', 
+                                            `dateCreation` = '$dateCreation' 
+                                        WHERE `idSoiree` = $idSoiree");
         return $resultatRequete;
     }
 }
