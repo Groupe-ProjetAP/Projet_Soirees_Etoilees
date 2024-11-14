@@ -20,7 +20,7 @@ class reservations {
     public function getnumReservation(){
         return $this->numReservation;
     }
-    public function getDateSoirée(){
+    public function getDateSoiree(){
         return $this->dateSoiree;
     }
 

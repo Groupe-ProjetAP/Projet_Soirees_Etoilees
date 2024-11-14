@@ -14,7 +14,6 @@
             <th>Heure Soirée</th>
             <th>Emplacement</th>
             <th>Info Complémentaire</th>
-            <th>date de création de la soirée</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -33,11 +32,10 @@
                         echo "<td>Debout</td>";
                     }
                 echo "<td>" . $uneSoirée->getInfoComp() . "</td>";
-                echo "<td>" . $uneSoirée->getDateCreation() . "</td>";
                 echo "<td>";
                     echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>Supprimer</a>";
                     echo " ";
-                    echo "<a class='btn' href='index.php?controleur=Soiree&action=modifierSoiree&nom=" . $uneSoirée->getNom() . "&nbPlace=" . $uneSoirée->getNbPlace() . "&date=" . $uneSoirée->getDateSoirée()."&idSoiré=".$uneSoirée->getId() . "'>Modifier</a>";
+                    echo "<a class='btn' href='index.php?controleur=Soiree&action=modifierSoiree&nom=" . $uneSoirée->getNom() . "&nbPlace=" . $uneSoirée->getNbPlace() . "&lieu=".$uneSoirée->getLieu(). "&date=" . $uneSoirée->getDateSoiree()."&idSoiree=".$uneSoirée->getId() . "'>Modifier</a>";
                 echo "</td>";
             echo "</tr>";
         }
