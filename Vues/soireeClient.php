@@ -7,7 +7,6 @@
     <thead>
         <tr>
             <th>Nom de la soirée</th>
-            <th>Nombre de places</th>
             <th>places dispo</th>
             <th>date de l'évenement</th>
             <th>Action</th>
@@ -19,9 +18,8 @@
         foreach ($listeSoirées as $uneSoirée) {
             echo "<tr>";
                 echo "<td>" . htmlspecialchars($uneSoirée->getNom()) . "</td>";
-                echo "<td>" . htmlspecialchars($uneSoirée->getNbPlace()) . "</td>";
                 echo "<td>" . htmlspecialchars($uneSoirée->getNbPlaceDispo()) . "</td>";
-                echo "<td>" . htmlspecialchars($uneSoirée->getDateSoirée()) . "</td>";
+                echo "<td>" . htmlspecialchars($uneSoirée->getDateSoiree()) . "</td>";
                 echo "<td>";
                     echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>reserver</a>";
 
