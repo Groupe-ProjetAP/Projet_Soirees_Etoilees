@@ -1,27 +1,39 @@
 <?php
 class reservations {
-    private $id;
-    private $nom;
     private $numReservation;
-    private $dateSoiree;
-    public function __construct($id, $nom,$numReservation,$dateSoiree) {
-        $this->id = $id;
-        $this->nom = $nom;
+    private $nom;
+    private $prenom;
+    private $nbPlace;
+    private $dateReservation;
+    private $idSoiree;
+    public function __construct($numReservation, $nom, $prenom, $nbPlace, $dateReservation, $idSoiree) {
         $this->numReservation = $numReservation;
-        $this->dateSoiree = $dateSoiree;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->nbPlace = $nbPlace;
+        $this->dateReservation = $dateReservation;
+        $this->idSoiree = $idSoiree;
     }
-    public function getId() {
-        return $this->id;
+    public function getnumReservation() {
+        return $this->numReservation;
     }
 
     public function getNom() {
         return $this->nom;
     }
-    public function getnumReservation(){
-        return $this->numReservation;
+    public function getPrenom(){
+        return $this->prenom;
     }
-    public function getDateSoirée(){
-        return $this->dateSoiree;
+    public function getNbPlace(){
+        return $this->nbPlace;
+    }
+
+    public function getdateReservation(){
+        return $this->dateReservation;
+    }
+
+    public function getidSoiree(){
+        return $this->idSoiree;
     }
 
 }

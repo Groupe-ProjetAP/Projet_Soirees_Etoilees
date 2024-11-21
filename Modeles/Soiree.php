@@ -1,6 +1,6 @@
 <?php
 class Soiree {
-    private $id;
+    private $idSoiree;
     private $nbplacedispo;
     private $nom;
     private $lieu;
@@ -10,8 +10,8 @@ class Soiree {
     private $placeAssise;
     private $infoComp;
 
-    public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp,$nbplacedispo) {
-        $this->id = $id;
+    public function __construct($idSoiree, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp,$nbplacedispo) {
+        $this->idSoiree = $idSoiree;
         $this->nom = $nom;
         $this->nbplace = $nbplace;
         $this->lieu = $lieu;
@@ -23,8 +23,8 @@ class Soiree {
         $this->nbplacedispo = $nbplacedispo;
 
     }
-    public function getId() {
-        return $this->id;
+    public function getIdSoiree() {
+        return $this->idSoiree;
     }
 
     public function getNom() {
