@@ -8,6 +8,10 @@ class SoireeDAO extends Base{
         parent::__construct('projetsjp','69844fqfqkmILJ5');
     }
     
+    /**
+     * Récupère la liste de toutes les soirées depuis la base de données.
+     * @return Soiree[]
+     */
     public function getLesSoirees() {
         $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,lieu,dateSoiree,heureSoiree,placeAssise,infoComp FROM soiree");
         $tableauSoirée=$resultatRequete->fetchAll();
@@ -18,14 +22,45 @@ class SoireeDAO extends Base{
         }
         return $listeSoirées;
     }
+
+    /**
+     * Supprime une soirée de la base de données à partir de son identifiant.
+     * @param mixed $idSoiree
+     * @return bool|int
+     */
     public function SupprimerSoiree($idSoiree) {
         $resultatRequete= $this ->exec("DELETE FROM `soiree` WHERE idSoiree =$idSoiree");
         return $resultatRequete;
     }
+
+    /**
+     * Ajoute une nouvelle soirée dans la base de données.
+     * @param mixed $nom
+     * @param mixed $nbPlace
+     * @param mixed $lieu
+     * @param mixed $dateSoiree
+     * @param mixed $heureSoiree
+     * @param mixed $placeAssise
+     * @param mixed $infoComp
+     * @return bool|int
+     */
     public function AjouterUneSoiree($nom,$nbPlace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp) {
         $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `nbPlaces`, `lieu` , `dateSoiree`, `heureSoiree`, `placeAssise`, `infoComp` ) VALUES ('$nom','$nbPlace','$lieu','$dateSoiree','$heureSoiree','$placeAssise','$infoComp')");
         return $resultatRequete;
     }
+
+    /**
+     * Modifie les informations d'une soirée existante dans la base de données.
+     * @param mixed $idSoiree
+     * @param mixed $nom
+     * @param mixed $nbPlace
+     * @param mixed $lieu
+     * @param mixed $dateSoiree
+     * @param mixed $heureSoiree
+     * @param mixed $placeAssise
+     * @param mixed $infoComp
+     * @return bool|int
+     */
     public function ModifierUneSoiree($idSoiree, $nom, $nbPlace, $lieu, $dateSoiree, $heureSoiree, $placeAssise, $infoComp) {
         $resultatRequete = $this->exec("UPDATE `soiree` 
                                         SET `nom` = '$nom', 
@@ -34,7 +69,7 @@ class SoireeDAO extends Base{
                                             `dateSoiree` = '$dateSoiree', 
                                             `heureSoiree` = '$heureSoiree', 
                                             `placeAssise` = '$placeAssise', 
-                                            `infoComp` = '$infoComp',  
+                                            `infoComp` = '$infoComp'  
                                         WHERE `idSoiree` = $idSoiree");
         return $resultatRequete;
     }
