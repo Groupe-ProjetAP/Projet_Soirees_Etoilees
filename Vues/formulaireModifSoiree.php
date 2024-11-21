@@ -32,13 +32,13 @@
         <label for="placeAssiseNon">Non</label><br><br>
 
         <label for="infoComp">Informations complémentaires :</label>
-        <input type="text" id="infoComp" name="infoComp" placeholder="Informations complémentaires" value="<?php echo isset($_GET['infoComp']) ? $_GET['infoComp'] : ''; ?>"><br><br>
+        <input type="text" id="infoComp" name="infoComp" placeholder="Informations complémentaires" style="width: 300px; height: 30px;" value="<?php echo isset($_GET['infoComp']) ? $_GET['infoComp'] : ''; ?>"><br><br>
 
         <input type="submit" value="Modifier">
     </form>
 
     <?php
-    var_dump(isset($_GET['idSoiree']) ? $_GET['idSoiree'] : 'idSoiree non défini');
+    isset($_GET['idSoiree']) ? $_GET['idSoiree'] : 'idSoiree non défini';
     ?>
 </body>
 </html>
