@@ -1,15 +1,21 @@
 <?php
-
+/**
+ * Classe abstraite pour les classes DAO
+ */
 class Base {
     private $db;
-    
+	 /**
+	  * Constructeur de la classe Base
+	  * @param string $user
+	  * @param string $mdp
+	  */
      public function __construct(string $user, string $mdp) {         
 		try{
 			/* =============================BD LOCALE =============================================== */
 			
 			/*
-			$serveurBdLocal = 'localhost';   				//base locale
-			$nomBdLocale = "bdPicNic";
+			$serveurBdLocal = 'localhost';
+			$nomBdLocale = "";
 					
 			$this->db = new PDO("mysql:host=".$serveurBdLocal.";dbname=".$nomBdLocale,$user,$mdp);
 			*/
@@ -33,12 +39,19 @@ class Base {
 	
 	
 	
-	
-    //methode publique définie pour pouvoir accéder à la méthode query() de la propriété $db qui est privée.
+	/**
+	 * Methode publique définie pour pouvoir accéder à la méthode query() de la propriété $db qui est privée.
+	 * @param mixed $sql
+	 * @return bool|int
+	 */
     public function query($sql) {
         return $this->db->query($sql);
     }
-	
+	/**
+	 * Methode publique définie pour pouvoir accéder à la méthode exec() de la propriété $db qui est privée.
+	 * @param mixed $sql
+	 * @return bool|int
+	 */
     public function exec($sql) {
 		echo $sql;
         return $this->db->exec($sql);

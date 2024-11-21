@@ -7,11 +7,11 @@
 <table>
     <thead>
         <tr>
-            <th>Nom de la soirée</th>
-            <th>Nombre de places disponible</th>
+            <th>Nom de</br> la soirée</th>
+            <th>Nombre de</br> places totale</th>
             <th>Lieu</th>
-            <th>Date soirée</th>
-            <th>Heure Soirée</th>
+            <th>Date</br> soirée</th>
+            <th>Heure</br> Soirée</th>
             <th>Emplacement</th>
             <th>Info Complémentaire</th>
             <th>Action</th>
@@ -33,13 +33,11 @@
                     }
                 echo "<td>" . $uneSoirée->getInfoComp() . "</td>";
                 echo "<td>";
-                    echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>Supprimer</a>";
+                    echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>Supprimer</a>"."</br>"."</br>";
                     echo " ";
-                    echo "<a class='btn' href='index.php?controleur=Soiree&action=modifierSoiree&nom=" . $uneSoirée->getNom()
-                                                                                        . "&nbPlace=" . $uneSoirée->getNbPlace() 
-                                                                                        . "&date=" . $uneSoirée->getDateSoiree()
-                                                                                        . "&idSoiré=". $uneSoirée->getId() 
-                                                                                        . "'>Modifier</a>";
+
+                    echo "<a class='btn' href='index.php?controleur=Soiree&action=modifierSoiree&nom=" . $uneSoirée->getNom() . "&nbPlace=" . $uneSoirée->getNbPlace() . "&lieu=".$uneSoirée->getLieu(). "&dateSoiree=" . $uneSoirée->getDateSoiree()."&idSoiree=".$uneSoirée->getId()."&heureSoiree=" . $uneSoirée->getHeureSoiree()."&placeAssise=" . $uneSoirée->getPlaceAssise()."&infoComp=" . $uneSoirée->getInfoComp() . "'>Modifier</a>";
+
                 echo "</td>";
             echo "</tr>";
         }
