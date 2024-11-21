@@ -35,7 +35,9 @@
                 echo "<td>";
                     echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>Supprimer</a>"."</br>"."</br>";
                     echo " ";
+
                     echo "<a class='btn' href='index.php?controleur=Soiree&action=modifierSoiree&nom=" . $uneSoirée->getNom() . "&nbPlace=" . $uneSoirée->getNbPlace() . "&lieu=".$uneSoirée->getLieu(). "&dateSoiree=" . $uneSoirée->getDateSoiree()."&idSoiree=".$uneSoirée->getId()."&heureSoiree=" . $uneSoirée->getHeureSoiree()."&placeAssise=" . $uneSoirée->getPlaceAssise()."&infoComp=" . $uneSoirée->getInfoComp() . "'>Modifier</a>";
+
                 echo "</td>";
             echo "</tr>";
         }

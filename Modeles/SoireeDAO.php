@@ -1,6 +1,6 @@
 <?php
 include 'modeles/Base.php';
-include 'C:\wamp64\www\Projet_Soirees_Etoilees\modeles\Soiree.php';
+include './Modeles/Soiree.php';
 
 class SoireeDAO extends Base{
     
@@ -13,6 +13,7 @@ class SoireeDAO extends Base{
      * @return Soiree[]
      */
     public function getLesSoirees() {
+      
         $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,lieu,dateSoiree,heureSoiree,placeAssise,infoComp FROM soiree");
         $tableauSoirée=$resultatRequete->fetchAll();
         $listeSoirées=array();

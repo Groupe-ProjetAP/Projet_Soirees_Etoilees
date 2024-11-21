@@ -10,7 +10,9 @@ class Soiree {
     private $placeAssise;
     private $infoComp;
 
+
     public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp) {
+
         $this->id = $id;
         $this->nom = $nom;
         $this->nbplace = $nbplace;
