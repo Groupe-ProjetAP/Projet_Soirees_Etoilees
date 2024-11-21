@@ -9,6 +9,8 @@ class Soiree {
     private $placeAssise;
     private $infoComp;
 
+
+
     /**
      * Contructeur de la classe soiree
      * @param mixed $id
@@ -20,7 +22,9 @@ class Soiree {
      * @param mixed $placeAssise
      * @param mixed $infoComp
      */
+
     public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp) {
+
         $this->id = $id;
         $this->nom = $nom;
         $this->nbplace = $nbplace;
