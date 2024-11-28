@@ -19,8 +19,8 @@ class reservationDAO extends Base{
         
         return $listeReservation;
     }
-    public function AjoutLesReservation($nom,$dateReservation,$idSoiree){
-        $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `nbPlaces`, `lieu` , `dateSoiree`, `heureSoiree`, `placeAssise`, `infoComp` ) VALUES ()");
+    public function AjoutLesReservation($nom,$prenom,$dateReservation,$idSoiree){
+        $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `prenom`, `dateReservation`, `idSoiree`) VALUES ($nom,$prenom,$dateReservation,$idSoiree)");
         return $resultatRequete;
     }
 

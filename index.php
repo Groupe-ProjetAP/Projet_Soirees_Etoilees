@@ -21,6 +21,7 @@
                     <li><a href="index.php?controleur=Soiree&action=consultation">Gérer vos soirées</a></li> 
                     <!-- <li><a href="index.php?controleur=Soiree&action=consultation">vos soirées</a></li>  -->
                     <a href="index.php?controleur=Soiree&action=consultationClient">soirées</a></li>
+                    <a href="index.php?controleur=PlaceParking&action=consultation">Places de Parking</a></li>
                 </ul>
             </nav>
             <div id="contenu">
@@ -38,6 +39,9 @@
                     case 'Reservation': // si ici c'est Soiree on met dans l'url à la partie controleur Soiree aussi et non gestionSoirée 
                         include("Controleurs\gestionReservation.php");
                         break;
+                    case 'PlaceParking': // si ici c'est Soiree on met dans l'url à la partie controleur Soiree aussi et non gestionSoirée 
+                            include("Controleurs\gestionPlaceParking.php");
+                            break;
                 }
                 ?>
 
