@@ -7,6 +7,7 @@
     <title>Votre Site</title>
     <link href="./style/main.css" rel="stylesheet">
     <link href="./style/voirPlus.css" rel="stylesheet">
+    <link href="./style/form.css" rel="stylesheet">
 </head>
 
 <body>

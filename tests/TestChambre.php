@@ -8,7 +8,7 @@ class ChambreTest extends TestCase
 {
     public function testGetId()
     {
-        $uneChambre = new Chambre(1, "Chambre 8", "12 rue des neiges","Tom@gmail.com","airbnb.fr");
+        $uneChambre = new Chambre(1, nom: "Chambre 8", "12 rue des neiges","Tom@gmail.com","airbnb.fr");
         assertEquals(1, $uneChambre->getId(),'NOK_GetId');
     }
 
