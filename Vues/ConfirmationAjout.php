@@ -1,3 +1,3 @@
 <?php
 echo "<br>";
-echo "soirée ajouter ";
+echo "soirée ajoutée ";

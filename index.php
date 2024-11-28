@@ -22,6 +22,7 @@
                     <li><a href="index.php?controleur=Soiree&action=consultation">Gérer vos soirées</a></li> 
                     <!-- <li><a href="index.php?controleur=Soiree&action=consultation">vos soirées</a></li>  -->
                     <a href="index.php?controleur=Soiree&action=consultationClient">soirées</a></li>
+                    <a href="index.php?controleur=ChambreHote&action=AjouterChambre">Ajout de chambre d'hôtes</a></li>
                 </ul>
             </nav>
             <div id="contenu">
@@ -38,6 +39,9 @@
                         break;
                     case 'Reservation': 
                         include("Controleurs\gestionReservation.php");
+                        break;
+                    case 'ChambreHote': 
+                        include("Controleurs\gestionChambreHote.php");
                         break;
                 }
                 ?>
