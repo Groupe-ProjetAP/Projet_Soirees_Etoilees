@@ -1,5 +1,4 @@
 <?php
-
 include("./Modeles/SoireeDAO.php");
 
 if (isset($_GET['action']))
