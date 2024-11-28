@@ -29,18 +29,7 @@ th, td {
     text-align: center;
 }
 
-td > a.btn {
-    margin-right: 10px; /* Ajoute un espacement horizontal uniforme entre les boutons */
-    display: inline-block; /* Force les boutons à rester alignés horizontalement */
-}
 
-td > a.btn:first-child {
-    margin-left: 0; /* Supprime la marge à gauche pour le premier bouton */
-}
-
-td > a.btn:last-child {
-    margin-right: 0; /* Supprime la marge pour le dernier bouton */
-}
 
 th {
     background-color: var(--primary-color);
