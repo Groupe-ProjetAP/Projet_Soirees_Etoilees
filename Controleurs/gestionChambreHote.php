@@ -8,7 +8,6 @@ else
 
 switch ($action) {
     case 'AjouterChambre':
-        $sourceDeDonnees = new ChambreDAO();
         include("./vues/formulaireAjoutChambre.php");
         break;
 
