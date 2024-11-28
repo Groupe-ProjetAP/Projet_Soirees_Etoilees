@@ -1,5 +1,7 @@
 <?php
-include './Modeles/SoireeDAO.php';
+
+include("./Modeles/SoireeDAO.php");
+
 if (isset($_GET['action']))
     $action = filter_var($_GET['action'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 else
@@ -39,8 +41,7 @@ switch ($action) {
 
     case 'enregSoireeModif':
         $sourceDeDonnees = new SoireeDAO();
-        $resultatRequete = $sourceDeDonnees->ModifierUneSoiree($_POST['idSoiree'],$_POST['nom'], $_POST['nbPlace'], $_POST['lieu'], $_POST['dateSoiree'],$_POST['heureSoiree'], $_POST['placeAssise'],$_POST['infoComp']);
-
+        $resultatRequete = $sourceDeDonnees->ModifierUneSoiree($_GET['idSoiree'],$_POST['nom'], $_POST['nbPlace'], $_POST['lieu'], $_POST['dateSoiree'],$_POST['heureSoiree'], $_POST['placeAssise'],$_POST['infoComp']);
         include("./vues/ConfirmationModif.php");
         break;
 

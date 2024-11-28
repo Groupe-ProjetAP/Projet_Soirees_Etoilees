@@ -32,6 +32,7 @@
                         echo "<td>Debout</td>";
                     }
                 echo "<td>" . $uneSoirée->getInfoComp() . "</td>";
+
                 echo "<td>";
                     echo "<a class='btn' href='index.php?controleur=Soiree&action=supprimerSoiree&idSoiree=" . $uneSoirée->getId() . "'>Supprimer</a>"."</br>"."</br>";
                     echo " ";
