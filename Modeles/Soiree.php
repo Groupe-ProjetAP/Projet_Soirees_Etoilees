@@ -10,7 +10,6 @@ class Soiree {
     private $infoComp;
 
 
-
     /**
      * Contructeur de la classe soiree
      * @param mixed $id
@@ -33,6 +32,7 @@ class Soiree {
         $this->heureSoiree = $heureSoiree;
         $this->placeAssise = $placeAssise;
         $this->infoComp = $infoComp;
+        $this->nbplacedispo = $nbplacedispo;
 
     }
 
@@ -42,6 +42,7 @@ class Soiree {
      */
     public function getId() {
         return $this->id;
+
     }
 
     /**
@@ -98,6 +99,9 @@ class Soiree {
      */
     public function getInfoComp(){
         return $this->infoComp;
+    }
+    public function getNbPlaceDispo(){
+        return $this->nbplacedispo;
     }
 
 }
