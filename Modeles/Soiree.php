@@ -11,7 +11,7 @@ class Soiree {
     private $infoComp;
 
 
-    public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp) {
+    public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp,$nbplacedispo) {
 
         $this->id = $id;
         $this->nom = $nom;
@@ -21,6 +21,7 @@ class Soiree {
         $this->heureSoiree = $heureSoiree;
         $this->placeAssise = $placeAssise;
         $this->infoComp = $infoComp;
+        $this->nbplacedispo = $nbplacedispo;
 
     }
     public function getId() {
