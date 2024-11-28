@@ -26,9 +26,10 @@ switch ($action) {
                 break;
 
     case 'reserverSoiree':
-
+        $idSoiree = 
         $sourceDeDonnees = new reservationDAO();
         $resultatRequete = $sourceDeDonnees->reserverSoiree($_POST['nom'],$_POST['prenom'],$_POST['nbPlace'],$_POST['IdSoiree']);
+        var_dump($resultatRequete);
         break;
 
 }
