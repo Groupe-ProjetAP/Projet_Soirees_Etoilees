@@ -31,8 +31,6 @@
         <label for="infoComp">Informations complémentaires :</label>
         <input type="text" id="infoComp" name="infoComp" placeholder="Informations complémentaires"><br><br>
 
-        
-        
         <input type="submit" value="Envoyer">
     </form>
 </body>

@@ -1,4 +1,5 @@
 <?php
+
 class reservations {
     private $numReservation;
     private $nom;
@@ -14,10 +15,17 @@ class reservations {
         $this->dateReservation = $dateReservation;
         $this->idSoiree = $idSoiree;
     }
+
     public function getnumReservation() {
         return $this->numReservation;
+
     }
 
+    /**
+     * Retourne le nom de la personne ayant effectué la réservation.
+     *
+     * @return mixed
+     */
     public function getNom() {
         return $this->nom;
     }
@@ -34,6 +42,7 @@ class reservations {
 
     public function getidSoiree(){
         return $this->idSoiree;
-    }
 
+    }
 }
+

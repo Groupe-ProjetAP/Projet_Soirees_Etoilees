@@ -19,7 +19,6 @@ class Soiree {
         $this->heureSoiree = $heureSoiree;
         $this->placeAssise = $placeAssise;
         $this->infoComp = $infoComp;
-
         $this->nbplacedispo = $nbplacedispo;
 
     }
@@ -49,8 +48,6 @@ class Soiree {
     public function getInfoComp(){
         return $this->infoComp;
     }
-
-
     public function getNbPlaceDispo(){
         return $this->nbplacedispo;
     }

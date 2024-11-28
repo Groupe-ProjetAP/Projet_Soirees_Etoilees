@@ -1,5 +1,7 @@
 <?php
+
 include("./Modeles/SoireeDAO.php");
+
 if (isset($_GET['action']))
     $action = filter_var($_GET['action'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 else
@@ -27,7 +29,7 @@ switch ($action) {
 
     case 'enregSoireeAjoutee':
         $sourceDeDonnees = new SoireeDAO();
-        $resultatRequete = $sourceDeDonnees->AjouterUneSoiree($_POST['nom'], $_POST['nbPlace'], $_POST['lieu'], $_POST['dateSoiree'],$_POST['heureSoiree'], $_POST['placeAssise'],$_POST['infoComp'] );
+        $resultatRequete = $sourceDeDonnees->AjouterUneSoiree($_POST['nom'], $_POST['nbPlace'], $_POST['lieu'], $_POST['dateSoiree'],$_POST['heureSoiree'], $_POST['placeAssise'],$_POST['infoComp']);
 
         include("./vues/ConfirmationAjout.php");
         break;
@@ -38,10 +40,8 @@ switch ($action) {
         break;
 
     case 'enregSoireeModif':
-        var_dump($_POST['idSoiree'],$_POST['nom'],$_POST['nbPlace'],$_POST['date']);
         $sourceDeDonnees = new SoireeDAO();
         $resultatRequete = $sourceDeDonnees->ModifierUneSoiree($_GET['idSoiree'],$_POST['nom'], $_POST['nbPlace'], $_POST['lieu'], $_POST['dateSoiree'],$_POST['heureSoiree'], $_POST['placeAssise'],$_POST['infoComp']);
-
         include("./vues/ConfirmationModif.php");
         break;
 
@@ -50,7 +50,7 @@ switch ($action) {
         $sourceDeDonnees = new SoireeDAO();
         $resultatRequete = $sourceDeDonnees->SupprimerSoiree($_GET['idSoiree']);
 
-        include("./vues/ConfirmationSupression.php");
+        include("./vues/ConfirmationSuppression.php");
         break;
 
 }
