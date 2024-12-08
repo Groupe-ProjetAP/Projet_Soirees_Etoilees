@@ -8,6 +8,7 @@ class Soiree {
     private $heureSoiree;
     private $placeAssise;
     private $infoComp;
+    private $nbplacedispo;
 
 
    public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp,$nbplacedispo) {

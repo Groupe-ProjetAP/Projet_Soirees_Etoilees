@@ -17,12 +17,12 @@ class SoireeDAO extends Base {
       
         $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,lieu,dateSoiree,heureSoiree,placeAssise,infoComp,nbPlacesDispo FROM soiree");
         $tableauSoirée=$resultatRequete->fetchAll();
-        $listeSoirées=array();
+        $listeSoirees=array();
         foreach ($tableauSoirée as $uneLigneUneSoirée) {
 
             $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"],$uneLigneUneSoirée['nbPlaces'],$uneLigneUneSoirée['lieu'],$uneLigneUneSoirée['dateSoiree'],$uneLigneUneSoirée['heureSoiree'],$uneLigneUneSoirée['placeAssise'],$uneLigneUneSoirée['infoComp'],$uneLigneUneSoirée["nbPlacesDispo"]);
 
-            $listeSoirées[]=$unObjetCompetence;
+            $listeSoirees[]=$unObjetCompetence;
 
         }
 
