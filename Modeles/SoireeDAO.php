@@ -13,6 +13,7 @@ class SoireeDAO extends Base {
      * @return Soiree[]
      */
     public function getLesSoirees() {
+
         $sql = "SELECT idSoiree, nom, nbPlaces, lieu, dateSoiree, heureSoiree, placeAssise, infoComp FROM soiree";
         $stmt = $this->prepareAndExecute($sql);
         $tableauSoiree = $stmt->fetchAll();
@@ -30,6 +31,7 @@ class SoireeDAO extends Base {
                 $uneLigneUneSoiree['infoComp']
             );
             $listeSoirees[] = $unObjetSoiree;
+
         }
 
         return $listeSoirees;
@@ -45,7 +47,6 @@ class SoireeDAO extends Base {
         $params = [':idSoiree' => $idSoiree];
         return $this->prepareAndExecute($sql, $params);
     }
-
     /**
      * Ajoute une nouvelle soirée dans la base de données.
      * @param string $nom
@@ -57,6 +58,7 @@ class SoireeDAO extends Base {
      * @param string $infoComp
      * @return bool|int
      */
+
     public function AjouterUneSoiree($nom, $nbPlace, $lieu, $dateSoiree, $heureSoiree, $placeAssise, $infoComp) {
         $sql = "INSERT INTO soiree (nom, nbPlaces, lieu, dateSoiree, heureSoiree, placeAssise, infoComp)
                 VALUES (:nom, :nbPlaces, :lieu, :dateSoiree, :heureSoiree, :placeAssise, :infoComp)";
@@ -70,6 +72,7 @@ class SoireeDAO extends Base {
             ':infoComp' => $infoComp
         ];
         return $this->prepareAndExecute($sql, $params);
+
     }
 
     /**
@@ -84,7 +87,9 @@ class SoireeDAO extends Base {
      * @param string $infoComp
      * @return bool|int
      */
+
     public function ModifierUneSoiree($idSoiree, $nom, $nbPlace, $lieu, $dateSoiree, $heureSoiree, $placeAssise, $infoComp) {
+
         $sql = "UPDATE soiree
                 SET nom = :nom,
                     nbPlaces = :nbPlaces,
@@ -105,5 +110,6 @@ class SoireeDAO extends Base {
             ':infoComp' => $infoComp
         ];
         return $this->prepareAndExecute($sql, $params);
+
     }
 }

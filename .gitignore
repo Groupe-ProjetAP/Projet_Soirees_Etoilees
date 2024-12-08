@@ -1,0 +1,2 @@
+#ignore le dossier vendor pour ne pas alourdir le projet avec des fichiers inutiles
+vendor/

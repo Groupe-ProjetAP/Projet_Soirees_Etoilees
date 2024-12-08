@@ -11,9 +11,24 @@ switch ($action) {
     case 'consultation':
         $sourceDeDonnees = new reservationDAO();
         $listeReservation = $sourceDeDonnees->getLesReservation();
-
         include("./vues/reservation.php");
         break;
 
+    case 'AjouterReservation':
+            $sourceDeDonnees = new reservationDAO();
+            include("./vues/formulaireReservation.php");
+            break;
+
+    case 'EnregistrerReservation':
+                $sourceDeDonnees = new reservationDAO();
+                $idSoiree = $_GET['IdSoiree'];
+                include("./vues/formulaireReservation.php");
+                break;
+
+    case 'reserverSoiree':
+
+        $sourceDeDonnees = new reservationDAO();
+        $resultatRequete = $sourceDeDonnees->reserverSoiree($_POST['nom'],$_POST['prenom'],$_POST['nbPlace'],$_POST['IdSoiree']);
+        break;
 
 }
