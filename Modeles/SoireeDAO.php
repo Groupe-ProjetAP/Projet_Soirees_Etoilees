@@ -14,23 +14,15 @@ class SoireeDAO extends Base {
      */
     public function getLesSoirees() {
 
-        $sql = "SELECT idSoiree, nom, nbPlaces, lieu, dateSoiree, heureSoiree, placeAssise, infoComp FROM soiree";
-        $stmt = $this->prepareAndExecute($sql);
-        $tableauSoiree = $stmt->fetchAll();
-        $listeSoirees = [];
+      
+        $resultatRequete= $this ->query("SELECT idSoiree, nom,nbPlaces,lieu,dateSoiree,heureSoiree,placeAssise,infoComp,nbPlacesDispo FROM soiree");
+        $tableauSoirée=$resultatRequete->fetchAll();
+        $listeSoirées=array();
+        foreach ($tableauSoirée as $uneLigneUneSoirée) {
 
-        foreach ($tableauSoiree as $uneLigneUneSoiree) {
-            $unObjetSoiree = new Soiree(
-                $uneLigneUneSoiree["idSoiree"],
-                $uneLigneUneSoiree["nom"],
-                $uneLigneUneSoiree['nbPlaces'],
-                $uneLigneUneSoiree['lieu'],
-                $uneLigneUneSoiree['dateSoiree'],
-                $uneLigneUneSoiree['heureSoiree'],
-                $uneLigneUneSoiree['placeAssise'],
-                $uneLigneUneSoiree['infoComp']
-            );
-            $listeSoirees[] = $unObjetSoiree;
+            $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"],$uneLigneUneSoirée['nbPlaces'],$uneLigneUneSoirée['lieu'],$uneLigneUneSoirée['dateSoiree'],$uneLigneUneSoirée['heureSoiree'],$uneLigneUneSoirée['placeAssise'],$uneLigneUneSoirée['infoComp'],$uneLigneUneSoirée["nbPlacesDispo"]);
+
+            $listeSoirées[]=$unObjetCompetence;
 
         }
 
