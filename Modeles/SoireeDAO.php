@@ -18,7 +18,9 @@ class SoireeDAO extends Base{
         $tableauSoirée=$resultatRequete->fetchAll();
         $listeSoirées=array();
         foreach ($tableauSoirée as $uneLigneUneSoirée) {
+
             $unObjetCompetence = new Soiree($uneLigneUneSoirée["idSoiree"], $uneLigneUneSoirée["nom"],$uneLigneUneSoirée['nbPlaces'],$uneLigneUneSoirée['lieu'],$uneLigneUneSoirée['dateSoiree'],$uneLigneUneSoirée['heureSoiree'],$uneLigneUneSoirée['placeAssise'],$uneLigneUneSoirée['infoComp'],$uneLigneUneSoirée["nbPlacesDispo"]);
+
             $listeSoirées[]=$unObjetCompetence;
         }
         return $listeSoirées;
@@ -33,7 +35,6 @@ class SoireeDAO extends Base{
         $resultatRequete= $this ->exec("DELETE FROM `soiree` WHERE idSoiree =$idSoiree");
         return $resultatRequete;
     }
-
     /**
      * Ajoute une nouvelle soirée dans la base de données.
      * @param mixed $nom
@@ -45,6 +46,7 @@ class SoireeDAO extends Base{
      * @param mixed $infoComp
      * @return bool|int
      */
+  
     public function AjouterUneSoiree($nom,$nbPlace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp) {
         $resultatRequete= $this ->exec("INSERT INTO `soiree`( `nom`, `nbPlaces`, `lieu` , `dateSoiree`, `heureSoiree`, `placeAssise`, `infoComp` ) VALUES ('$nom','$nbPlace','$lieu','$dateSoiree','$heureSoiree','$placeAssise','$infoComp')");
         return $resultatRequete;
@@ -62,6 +64,7 @@ class SoireeDAO extends Base{
      * @param mixed $infoComp
      * @return bool|int
      */
+
     public function ModifierUneSoiree($idSoiree, $nom, $nbPlace, $lieu, $dateSoiree, $heureSoiree, $placeAssise, $infoComp) {
         $resultatRequete = $this->exec("UPDATE `soiree` 
                                         SET `nom` = '$nom', 
@@ -69,7 +72,7 @@ class SoireeDAO extends Base{
                                             `lieu` = '$lieu', 
                                             `dateSoiree` = '$dateSoiree', 
                                             `heureSoiree` = '$heureSoiree', 
-                                            `placeAssise` = '$placeAssise', 
+                                            `placeAssise` = '$placeAssise',                         
                                             `infoComp` = '$infoComp'  
                                         WHERE `idSoiree` = $idSoiree");
         return $resultatRequete;

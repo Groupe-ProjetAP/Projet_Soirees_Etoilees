@@ -21,6 +21,7 @@
                 echo "<td>" . htmlspecialchars($uneSoirée->getNbPlace()) . "</td>";
                 echo "<td>" . htmlspecialchars($uneSoirée->getDateSoiree()) . "</td>";
                 echo "<td>";
+
                 if($uneSoirée->getNbPlace() <= 0){
                     echo "<a class='btn' href='#'>Aucune place dispo</a>";
                 }else{

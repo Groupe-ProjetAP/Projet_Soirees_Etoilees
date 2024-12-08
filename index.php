@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votre Site</title>
     <link href="./style/main.css" rel="stylesheet">
+    <link href="./style/voirPlus.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,10 +33,10 @@
                     $controleur = "general";
 
                 switch ($controleur) {
-                    case 'Soiree': // si ici c'est Soiree on met dans l'url à la partie controleur Soiree aussi et non gestionSoirée 
+                    case 'Soiree': 
                         include("controleurs/gestionSoiree.php");
                         break;
-                    case 'Reservation': // si ici c'est Soiree on met dans l'url à la partie controleur Soiree aussi et non gestionSoirée 
+                    case 'Reservation': 
                         include("Controleurs\gestionReservation.php");
                         break;
                 }

@@ -1,35 +1,24 @@
 <?php
-/**
- * Classe représentant une réservation pour une soirée.
- */
-class Reservations {
-    private $id;
-    private $nom;
-    private $numReservation;
-    private $dateSoiree;
 
-    /**
-     * Constructeur de la classe Reservations.
-     *
-     * @param mixed $id
-     * @param mixed $nom
-     * @param mixed $numReservation
-     * @param mixed $dateSoiree
-     */
-    public function __construct($id, $nom, $numReservation, $dateSoiree) {
-        $this->id = $id;
-        $this->nom = $nom;
+class reservations {
+    private $numReservation;
+    private $nom;
+    private $prenom;
+    private $nbPlace;
+    private $dateReservation;
+    private $idSoiree;
+    public function __construct($numReservation, $nom, $prenom, $nbPlace, $dateReservation, $idSoiree) {
         $this->numReservation = $numReservation;
-        $this->dateSoiree = $dateSoiree;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->nbPlace = $nbPlace;
+        $this->dateReservation = $dateReservation;
+        $this->idSoiree = $idSoiree;
     }
 
-    /**
-     * Retourne l'identifiant unique de la réservation.
-     *
-     * @return mixed
-     */
-    public function getId() {
-        return $this->id;
+    public function getnumReservation() {
+        return $this->numReservation;
+
     }
 
     /**
@@ -40,23 +29,20 @@ class Reservations {
     public function getNom() {
         return $this->nom;
     }
-
-    /**
-     * Retourne le numéro de la réservation.
-     *
-     * @return mixed
-     */
-    public function getnumReservation() {
-        return $this->numReservation;
+    public function getPrenom(){
+        return $this->prenom;
+    }
+    public function getNbPlace(){
+        return $this->nbPlace;
     }
 
-    /**
-     * Retourne la date de la soirée pour laquelle la réservation a été faite.
-     *
-     * @return mixed
-     */
-    public function getDateSoiree() {
-        return $this->dateSoiree;
+    public function getdateReservation(){
+        return $this->dateReservation;
+    }
+
+    public function getidSoiree(){
+        return $this->idSoiree;
+
     }
 }
 

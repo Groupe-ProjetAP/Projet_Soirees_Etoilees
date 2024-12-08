@@ -1,0 +1,11 @@
+/* Stylisation du lien "Voir plus" */
+.toggle-info {
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Le texte complet est caché par défaut */
+.info-complete {
+    display: none;
+}
