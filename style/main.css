@@ -5,6 +5,8 @@
 }
 
 
+
+
 nav ul {
     list-style-type: none;
     display: flex;
@@ -55,4 +57,10 @@ tr:hover {
 
 .btn:hover {
     background-color: var(--primary-color-hover);
+}
+
+.accueil {
+    background-image: url('../image/background-montagne.jpg');
+    background-size: cover;
+    background-position: center;
 }

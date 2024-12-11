@@ -1,5 +1,5 @@
 <?php
-include(".\\Modeles\\reservationDAO.php");
+include("./Modeles/reservationDAO.php");
 if (isset($_GET['action']))
     $action = filter_var($_GET['action'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 else
@@ -7,6 +7,9 @@ else
 
 
 switch ($action) {
+    case 'accueil':
+        include("../vues/accueil.php");
+        break;
 
     case 'consultation':
         $sourceDeDonnees = new reservationDAO();
