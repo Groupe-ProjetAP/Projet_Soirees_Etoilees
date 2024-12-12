@@ -1,37 +1,56 @@
 :root {
-    --primary-color: #6963b6; /* couleur principale */
-    --primary-color-hover: #433c9c; /* couleur au survol */
-    --text-color: white;
+    --primary-color: #69a4f0; /* Couleur principale */
+    --primary-color-hover: #5492e2; /* Couleur au survol */
+    --nav-footer-color: #677179; /* couleur navbar et footer */
+    --text-color: white; /* Couleur du texte */
+    --bg-color-light: #f2f2f2; /* Couleur de fond clair */
+    --bg-color-hover: #ddd; /* Couleur au survol pour les lignes */
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+}
 
-
-
+/* === NAVIGATION === */
 nav ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--nav-footer-color);
 }
 
-.table-container {
-    overflow-x: auto;
-    width: 100%;
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
+nav ul li a:hover {
+    background-color: var(--primary-color-hover);
+}
+
+/* === TABLES === */
 table {
+    color: #370028;
     width: 100%;
     border-collapse: collapse;
-
-    min-width: 800px; /* largeur minimale pour éviter la probleme */
+    min-width: 800px; /* Largeur minimale */
+    margin: 0 auto;
 }
 
 th, td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
 }
-
-
 
 th {
     background-color: var(--primary-color);
@@ -39,28 +58,124 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--bg-color-light);
+}
+tr:nth-child(odd) {
+    background-color: #ffffff; /* Couleur pour les lignes impaires */
 }
 
 tr:hover {
-    background-color: #ddd;
+    background-color: var(--bg-color-hover);
 }
 
+/* === BOUTONS === */
 .btn {
     text-decoration: none;
     color: var(--text-color);
     background-color: var(--primary-color);
-    padding: 5px 10px;
+    padding: 8px 15px;
     border-radius: 4px;
     transition: background-color 0.3s;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
 }
 
 .btn:hover {
     background-color: var(--primary-color-hover);
 }
 
+/* === SECTION ACCUEIL === */
 .accueil {
-    background-image: url('../image/background-montagne.jpg');
-    background-size: cover;
-    background-position: center;
+    height: 100vh; /* 100% de la hauteur de l'écran */
+    width: 100%; /* 100% de la largeur */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('../image/background-picMidi.jpg'); /* Chemin vers l'image */
+    background-size: cover; /* L'image couvre tout l'élément */
+    background-position: center; /* Centre l'image */
+    color: var(--text-color);
 }
+
+.accueil h1 {
+    font-size: 5rem; /* Titre en grand */
+    margin: 0; /* Pas d'espace supplémentaire */
+    text-transform: uppercase; /* Texte en majuscules */
+    font-weight: bold; /* Texte plus gras */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre pour améliorer la lisibilité */
+}
+
+.accueil h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* === Footer === */
+#footer {
+    margin: 0;
+    padding: 10px;
+    background-color: var(--nav-footer-color);
+}
+
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+
+
+    table {
+        min-width: 100%; /* Supprime la contrainte de largeur */
+    }
+
+    .accueil h1 {
+        font-size: 2.5rem;
+    }
+
+    .accueil h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* === FORMULAIRE === */
+form {
+    color: #370028;
+    max-width: 500px; /* Limite la largeur du formulaire */
+    margin: 20px auto; /* Centré horizontalement */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond clair */
+    border: 1px solid #ddd; /* Bordure fine */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+
+/* === CHAMPS DE TEXTE === */
+form input {
+    color: #370028;
+    width: 100%; /* Prend toute la largeur */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 16px;
+    background-color: var(--bg-color-light);
+    transition: border-color 0.3s;
+}
+
+
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: var(--primary-color-hover); /* Couleur au survol */
+}
+
+
+/* === MESSAGES D'ERREUR === */
+form .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+

@@ -3,7 +3,7 @@
 <a class='btn' href="index.php?controleur=Soiree&action=AjouterSoiree">ajouter une soirée</a>
 </br>
 </br>
-
+<div>
 <table>
     <thead>
         <tr>
@@ -63,4 +63,5 @@
         
     </tbody>
 </table>
+</div>
 <script src="./script/voirPlus.js"></script>

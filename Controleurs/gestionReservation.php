@@ -7,10 +7,6 @@ else
 
 
 switch ($action) {
-    case 'accueil':
-        include("../vues/accueil.php");
-        break;
-
     case 'consultation':
         $sourceDeDonnees = new reservationDAO();
         $listeReservation = $sourceDeDonnees->getLesReservation();

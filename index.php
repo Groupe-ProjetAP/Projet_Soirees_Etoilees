@@ -21,7 +21,7 @@
                     <li><a href="index.php?controleur=General&action=accueil">Accueil</a></li>
                     <li><a href="index.php?controleur=Soiree&action=consultation">Gérer vos soirées</a></li> 
                     <!-- <li><a href="index.php?controleur=Soiree&action=consultation">vos soirées</a></li>  -->
-                    <a href="index.php?controleur=Soiree&action=consultationClient">soirées</a></li>
+                    <li><a href="index.php?controleur=Soiree&action=consultationClient">soirées</a></li>
                 </ul>
             </nav>
             <div id="contenu">
@@ -49,7 +49,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="footer">
         <p>&copy; 2024  - Tous droits réservés.</p>
     </footer>
 </body>
