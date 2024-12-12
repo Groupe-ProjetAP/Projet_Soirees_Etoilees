@@ -3,7 +3,7 @@
 <a class='btn' href="index.php?controleur=Soiree&action=AjouterSoiree">ajouter une soirée</a>
 </br>
 </br>
-
+<div>
 <table>
     <thead>
         <tr>
@@ -34,7 +34,7 @@
 
                 // Info complémentaire avec affichage limité et possibilité de voir plus/moins
                 $infoComp = $uneSoirée->getInfoComp();
-                $maxLength = 50; // Limite de caractères affichés
+                $maxLength = 80; // Limite de caractères affichés
 
                 if (strlen($infoComp) > $maxLength) {
                     // Si le texte est plus long que la limite, on montre un extrait avec un lien pour voir plus
@@ -63,4 +63,5 @@
         
     </tbody>
 </table>
+</div>
 <script src="./script/voirPlus.js"></script>
