@@ -7,6 +7,6 @@ else
 
 switch ($action) {
     case 'accueil':
-        include("../vues/accueil.php");
+        include(".\Vues\accueil.php");
         break;
 }
