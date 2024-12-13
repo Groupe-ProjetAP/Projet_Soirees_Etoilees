@@ -3,6 +3,7 @@
     --primary-color-hover: #5492e2; /* Couleur au survol */
     --nav-footer-color: #677179; /* couleur navbar et footer */
     --text-color: white; /* Couleur du texte */
+    --text-color-noir: #370028;
     --bg-color-light: #f2f2f2; /* Couleur de fond clair */
     --bg-color-hover: #ddd; /* Couleur au survol pour les lignes */
 }
@@ -11,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    color: var(--text-color);
+    color:var(--text-color-noir);
 }
 
 /* === NAVIGATION === */
@@ -39,7 +40,7 @@ nav ul li a:hover {
 
 /* === TABLES === */
 table {
-    color: #370028;
+    color:var(--text-color-noir);
     width: 100%;
     border-collapse: collapse;
     min-width: 800px; /* Largeur minimale */
@@ -141,7 +142,7 @@ tr:hover {
 
 /* === FORMULAIRE === */
 form {
-    color: #370028;
+    color:var(--text-color-noir);
     max-width: 500px; /* Limite la largeur du formulaire */
     margin: 20px auto; /* Centré horizontalement */
     padding: 20px;
@@ -154,7 +155,7 @@ form {
 
 /* === CHAMPS DE TEXTE === */
 form input {
-    color: #370028;
+    color:var(--text-color-noir);
     width: 100%; /* Prend toute la largeur */
     padding: 10px;
     margin-bottom: 15px;
