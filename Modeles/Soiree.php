@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Classe `Soiree`
+ * Représente une soirée avec toutes les informations nécessaires telles que l'identifiant, le nom, le lieu, les places disponibles, etc.
+ */
 class Soiree {
     private $id;
     private $nom;
@@ -11,6 +16,20 @@ class Soiree {
     private $nbplacedispo;
 
 
+    /**
+     * Constructeur de la classe `Soiree`.
+     * Initialise les propriétés de la soirée.
+     *
+     * @param int $id Identifiant unique de la soirée.
+     * @param string $nom Nom de la soirée.
+     * @param int $nbplace Nombre total de places disponibles.
+     * @param string $lieu Lieu où se déroule la soirée.
+     * @param string $dateSoiree Date de la soirée.
+     * @param string $heureSoiree Heure de la soirée.
+     * @param int $placeAssise Nombre de places assises disponibles.
+     * @param string $infoComp Informations complémentaires.
+     * @param int $nbplacedispo Nombre de places encore disponibles.
+     */
    public function __construct($id, $nom,$nbplace,$lieu,$dateSoiree,$heureSoiree,$placeAssise,$infoComp,$nbplacedispo) {
 
         $this->id = $id;
@@ -89,6 +108,12 @@ class Soiree {
     public function getInfoComp(){
         return $this->infoComp;
     }
+    
+    /**
+     * Retourne le nombre de places encore disponibles pour la soirée.
+     *
+     * @return int
+     */
     public function getNbPlaceDispo(){
         return $this->nbplacedispo;
     }
