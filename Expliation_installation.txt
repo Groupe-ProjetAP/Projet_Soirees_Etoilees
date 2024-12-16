@@ -1,0 +1,14 @@
+Pour installer ce projet sur une machine , suivez ces étapes :
+
+Cloner le dépôt GitHub :
+
+git clone https://github.com/Groupe-ProjetAP/Projet_Soirees_Etoilees/
+
+
+Déplacer le projet dans le répertoire www de WampServer :
+Ce répertoire se trouve généralement dans C:\wamp64\www\.
+
+Puis lancer le projet depuis localhost, il est nécessaire d'avoir une connexion internet car la base de donnée est hébergé sur alwaysdata : https://phpmyadmin.alwaysdata.com
+
+Utilisateur MySQL : projetsjp
+Mot de passe : 69844fqfqkmILJ5
