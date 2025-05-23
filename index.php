@@ -20,8 +20,8 @@
                 <ul>
                     <li><a href="index.php?controleur=General&action=accueil">Accueil</a></li>
                     <li><a href="index.php?controleur=Soiree&action=consultation">Gérer vos soirées</a></li> 
-                    <!-- <li><a href="index.php?controleur=Soiree&action=consultation">vos soirées</a></li>  -->
                     <li><a href="index.php?controleur=Soiree&action=consultationClient">soirées</a></li>
+                    <li><a href="index.php?controleur=Client&action=consultationClientPass">Gérer client avec Pass</a></li> 
                 </ul>
             </nav>
             <div id="contenu">
@@ -41,6 +41,9 @@
                         break;
                     case 'Reservation': 
                         include("Controleurs\gestionReservation.php");
+                        break;
+                    case 'Client': 
+                        include("Controleurs\gestionClient.php");
                         break;
                 }
                 ?>
