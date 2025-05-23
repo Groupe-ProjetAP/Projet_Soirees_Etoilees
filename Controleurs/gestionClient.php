@@ -13,9 +13,6 @@ switch ($action) {
         $sourceDeDonnees = new cartePassDAO();
         $listeClientPass = $sourceDeDonnees->getLesClientPassValide2();
 
-        // $sourceDeDonneesBis = new cartePassDAO();
-        // $listeNomClientPass = $sourceDeDonneesBis->getLesNomClientPassValide();
-
         include("./vues/clientPassValide.php");
         break;
 
